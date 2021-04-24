@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0097)file:///C:/Users/samsung/Desktop/%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%20%EB%B0%941.html# -->
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<title>WMS TEST</title>
+	<!-- Bootstrap -->
+</head>
+
+<body>
+		{{session.get('pass_ok')}}
+
+		<hr style="border:solid 3px  #808080;">
+		<br>
+		
+	<center>
+		<span class="label label-info">{{session.get('sco_id')}} さん</span>こんにちは！	
+			
+			<from action="http://127.0.0.1:5000//logout" method="post">
+				<a href="/logout">Logout</a>
+			</form> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button class="btn btn-warning" onclick="window.open('http://127.0.0.1:5000/popup','window_name','width=600,height=400,location=no,status=no,scrollbars=yes');">
+				ID登録</button></center><br>
+
+		<h1>{{session.get('sco_name')}}の{{session.get('sco_id')}}さん、こんにちは！ </h1>
+		<br>
+		회사 코드 출력확인 : {{session.get('sco_code')}}
+
+		<br><br>
+		<h2>회사정보 테이블값표시</h2>
+		<br>
+	
+		{% for i in players%}
+			<H3>{{i.co_code}}, {{i.co_name}}<a href="/show/{{i.co_code}}">                      表示</a></H3>
+
+		{% endfor %}
+
+		<br><br>
+ 	</center>
+
+<center>
+
+
+		
+		<h3>商品登録</h3>
+	<form action="/ADD_S" method="post">
+    	<div class="form-group text-center" >
+      			<div class="col-lg-4"> </div>
+			<div class="col-lg-4 ">
+				<label class="col-lg-2 control-label">商品Code</label>
+       			<input type="text" class="form-control onlyAlphabetAndNumber"  placeholder="code" maxlength="30" name="p_code">
+		  
+        		<label for="inputId " class="col-lg-2 control-label">数量</label>
+            	<input type="text" class="form-control onlyAlphabetAndNumber"  placeholder="数量" maxlength="30" name="n_code">
+
+            	<label for="inputPassword" class="col-lg-2 control-label">倉庫名</label>
+    			<input type="text" class="form-control" placeholder="倉庫名"  maxlength="30" name="w_code">
+		
+				<button type="submit" class="btn btn-info navbar-btn">登録</button>   
+            	<br><br>   
+			</div>
+    	</div>
+	</form>
+</center>
+
+			<br><br><br>	<br><br><br>
+ 			<div class="col-lg-1"> </div>
+ 	<div class="col-lg-11"> 
+	
+		<table   class="table table-striped table-responsive"style="text-align: center;">
+			<tr>
+				<th style="text-align: center;">商品名</th>
+				<th style="text-align: center;">数量</th>
+				<th style="text-align: center;">倉庫名</th>
+				<th style="text-align: center;">登録時間</th>
+			</tr>
+
+ 			{% if test01%}
+				{% for line in line_t: %} 
+					{% set column =line.rstrip().split(",")%}
+						<tr>
+						  {% for item in column: %}
+						  <td><span class="font-weight-bold font-italic text-secondary">{{item}}</span></td>
+						  {% endfor %}
+						</tr>
+				{% endfor %}
+			{% else %}
+			<h1>로그인값없음</h1>
+ 			{% endif %} 
+		</table>
+		
+	</div>
+
+		<div class="container">
+
+	 	<br><br>&nbsp;&nbsp;
+            <br><br><br><br><br>		
+<hr style="border:solid 3px  #808080;">
+
+			<h1>倉庫登録</h1>
+	<div class="starter-template2">
+		<form class="form-horizontal" action="/we"method="post">
+			<center>
+        			<div class="form-group" > </div>
+            	<div class="form-group" id="divId">
+                	<label for="inputId " class="col-lg-4 control-label">WareHouse name</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="form-control onlyAlphabetAndNumber"  placeholder="倉庫名" maxlength="30" name="we_name">
+                  </div>
+            	</div>
+			  	<button type="submit" class="btn btn-info navbar-btn">登録</button>   
+            	<br><br>			    
+    </div>	
+			</center>
+		</form>
+<hr style="border:solid 3px  #808080;">
+
+
+
+	<script src="https://jbit.bufs.ac.kr/~cosmos/소다 마켓_files/jquery.min.js.다운로드"></script>
+	<script src="https://jbit.bufs.ac.kr/~cosmos/소다 마켓_files/bootstrap.min.js.다운로드"></script>
+
+</body>
+
+</html>

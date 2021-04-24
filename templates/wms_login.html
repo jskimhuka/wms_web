@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Brycen WMS</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+</head>
+	<style>
+	    body {
+			padding-top: 50px;
+			background-color:white;
+		}
+	
+
+		.starter-template2 {
+			padding: 40px 15px;
+			background-color: #a6a6a6;
+            background-image:url(https://jbit.bufs.ac.kr/~dkim/WMS/img/loginBG26.png);
+            background-repeat:no-repeat;background-position: 50% 50%;
+            height: 400px;
+		}
+		.starter-template {
+			padding: 40px 15px;
+			background-color: #F2F2F2;
+       
+		}
+        
+	</style>
+<body>
+
+
+{%if OK%}
+<script>alert("logoutしました！");</script>
+<script>window.location.href='http://127.0.0.1:5000/';</script>
+{%else%}
+
+{%endif%}
+
+<br><br>
+<center>
+<!-- style="opacity: 0.2;" 
+<img  src="https://jbit.bufs.ac.kr/~dkim/WMS/img/1111.gif">
+-->
+</center>
+
+<div class="container">
+	 
+        <br><br>
+
+    &nbsp;&nbsp;
+        <div class="starter-template">
+	       
+    	<div class="starter-template2">
+			<center>
+			<h1 style="font-weight:bold;">BRC WMS</h1>
+			<br><br>
+			</center>
+			<form class="form-horizontal" action="/login"method="post">
+			<center>
+            <div class="form-group" >
+                             <label class="col-lg-4 control-label">Company Code</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control"   maxlength="30" name="co_name">
+                </div>
+              </div>
+              <div class="form-group" id="divId">
+                             <label for="inputId " class="col-lg-4 control-label">ID</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control"  placeholder="id" maxlength="30" name="co_id">
+                </div>
+              </div>
+
+               <div class="form-group" id="divPassword">
+                <label for="inputPassword" class="col-lg-4 control-label">Password</label>
+                <div class="col-lg-5">
+                    <input type="password" class="form-control " id="password"  placeholder="Password" maxlength="30" name="co_pw">
+				  <div class="form-group" id="divId" style="float:right;">
+				  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<button type="submit" class="btn btn-info navbar-btn">Login</button>   
+                   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+				
+				<br><br>
+			       
+				  </div>
+				</div>
+        </div>
+		</div>
+			
+		</center>
+</form>
+</div>
+<h4 style="text-align: center;">Copyright ⓒ 2021 by Brycen All Rights Reserved.</h4>
+
+
+	 				
+	
+<hr style="border:solid 3px  #808080;">
+
+<img  src="https://jbit.bufs.ac.kr/~dkim/WMS/img/brc.png">
+
+<h4>Brycen SGE 金 多彬</h4>
+<!--
+<h4>Brycen SGE 羅 炫宣</h4>
+<h4>Brycen SGE 崔 ダウン</h4>
+<h4>Brycen LDS 金 俊樹</h4>
+<h4>Brycen SGE CAO DUC KHIEM</h4>
+-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
